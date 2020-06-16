@@ -15,12 +15,14 @@ int main() {
       "twitter_timeline.json", "repeat.json",          "smalldemo.json",
       "truenull.json"};
   //
+  std::cout << "\n\nparser inside of loop =======================" << std::endl;
   for (auto path : file_paths) {  // no problem ================================
     simdjson::dom::parser parser2;
     std::cout << "file: " << path << std::endl;
     auto [element, error] = parser2.load(path);
   }
   //
+  std::cout << "\n\nparser outside of loop ======================" << std::endl;
   simdjson::dom::parser parser3;
   for (auto path : file_paths) {  // segmentation fault ========================
     std::cout << "file: " << path << std::endl;
