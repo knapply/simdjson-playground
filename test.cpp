@@ -21,7 +21,7 @@ int main() {
     auto [element, error] = parser2.load(path);
   }
   //
-  simdjson::dom::parser parser3(4000000000);
+  simdjson::dom::parser parser3;
   for (auto path : file_paths) {  // segmentation fault ========================
     std::cout << "file: " << path << std::endl;
 
